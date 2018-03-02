@@ -1,4 +1,4 @@
-package eu.numerocinque.chessboardmatrixlibrary;
+package eu.numerocinque.matrix;
 
 public class Coordinates {
     private static String string = "string";

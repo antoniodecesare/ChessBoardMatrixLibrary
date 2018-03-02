@@ -1,4 +1,4 @@
-package eu.numerocinque.chessboardmatrixlibrary;
+package eu.numerocinque.matrix;
 
 public class Matrix {
     private static int matrix = 0;
