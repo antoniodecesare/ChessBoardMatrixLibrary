@@ -1,18 +1,13 @@
 package eu.numerocinque.chessboardmatrixlibrary;
 
 import android.support.annotation.NonNull;
-import android.view.View;
 
 public class Coordinates {
     private static String RANGEX, RANGEY;
-    private static int side, boardSide, edge;
 
-    static void init(String getRANGEX, String getRANGEY, int getSide, int getBoardSide, int getEdge) {
+    static void init(String getRANGEX, String getRANGEY) {
         RANGEX = getRANGEX;
         RANGEY = getRANGEY;
-        side = getSide;
-        boardSide = getBoardSide;
-        edge = getEdge;
     }
 
     static int getCoordinatesX(String coordinates) {
@@ -31,26 +26,6 @@ public class Coordinates {
         if (RANGEY.contains(coordY)) y = coordY.charAt(0) - 49;
 
         return y;
-    }
-
-    static String getViewCoordinates(View view) {
-        String coordinates = null;
-
-        int x = (int) ((view.getX() + side / 2 - (side / 2) * edge) / side);
-        if (x < 0) x = 0;
-        if (x > 7) x = 7;
-
-        int y = boardSide - (int) (view.getY() + side / 2 - (side / 2) * edge) / side - 1;
-        if (y < 0) y = 0;
-        if (y > 7) y = 7;
-
-        String coordinatesX = Character.toString((char) (x + 97));
-        String coordinatesY = Character.toString((char) (y + 49));
-
-        if (RANGEX.contains(coordinatesX) && RANGEY.contains(coordinatesY))
-            coordinates = coordinatesX + coordinatesY;
-
-        return coordinates;
     }
 
     @NonNull
@@ -87,13 +62,4 @@ public class Coordinates {
     static String nextCoordinates(String coordinates, Matrix matrix, boolean forward) {
         return nextCoordinates(coordinates, matrix.getMatrix(), forward);
     }
-
-    static float graphX(int x) {
-        return x * side + (side / 2) * edge;
-    }
-
-    static float graphY(int y) {
-        return (boardSide - y - 1) * side + (side / 2) * edge;
-    }
-
 }
