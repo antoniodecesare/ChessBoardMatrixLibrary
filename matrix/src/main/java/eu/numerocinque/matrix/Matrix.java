@@ -1,9 +1,13 @@
 package eu.numerocinque.matrix;
 
 public class Matrix {
-    private static int matrix = 0;
+    private final Object[][] matrix;
 
-    public static int getMatrix() {
+    public Matrix(int x, int y) {
+        matrix = new Object[x][y];
+    }
+
+    public Object[][] getMatrix() {
         return matrix;
     }
 }
