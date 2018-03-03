@@ -4,7 +4,7 @@ public class Coordinates {
     public static final String RANGEX = "abcdefgh";
     public static final String RANGEY = "12345678";
 
-    static int getCoordinatesX(String coordinates) {
+    public static int getCoordinatesX(String coordinates) {
         int x = -1;
 
         String coordX = coordinates.substring(0, 1).toLowerCase();
@@ -13,7 +13,7 @@ public class Coordinates {
         return x;
     }
 
-    static int getCoordinatesY(String coordinates) {
+    public static int getCoordinatesY(String coordinates) {
         int y = -1;
 
         String coordY = coordinates.substring(1, 2).toLowerCase();
