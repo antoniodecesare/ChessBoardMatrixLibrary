@@ -59,4 +59,7 @@ public class Coordinates {
         return nextCoordinates(coordinates, matrix.getMatrix(), forward);
     }
 
+    public static String xyToCoordinates(int x, int y) {
+        return Character.toString((char) (x + 97)) + Character.toString((char) (y + 49));
+    }
 }

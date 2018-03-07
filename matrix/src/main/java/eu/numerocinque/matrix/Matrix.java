@@ -2,6 +2,7 @@ package eu.numerocinque.matrix;
 
 import static eu.numerocinque.matrix.Coordinates.getCoordinatesX;
 import static eu.numerocinque.matrix.Coordinates.getCoordinatesY;
+import static eu.numerocinque.matrix.Coordinates.xyToCoordinates;
 
 public class Matrix {
     private final Object[][] matrix;
@@ -34,6 +35,10 @@ public class Matrix {
         if (check(x, y)) thisObject = matrix[x][y];
 
         return thisObject;
+    }
+
+    public Object get(int x, int y) {
+        return get(xyToCoordinates(x, y));
     }
 
 }
